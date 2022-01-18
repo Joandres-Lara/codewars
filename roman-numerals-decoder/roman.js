@@ -5,19 +5,21 @@ export default function solution(roman){
   x: 10, 
   l: 50,
   c: 100,
-  d: 5000,
+  d: 500,
+  m: 1000,
   "": 0
  };
 
  let sum = 0;
- for(let 0; i < roman.length; i += 2){
+ for(let i = 0; i < roman.length; i += 2){
   const actual = roman[i].toLowerCase();
   const next = (roman[i+1] || "").toLowerCase();
 
   if(values[actual] >= values[next]){
    sum += values[actual] + values[next];
   }else{
-   sum += values[actual] - values[next];
+   sum += values[next] - values[actual];
   }
  }
+ return sum
 }
